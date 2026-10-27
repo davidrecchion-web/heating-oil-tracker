@@ -1098,6 +1098,14 @@ def main():
     build_index_page(data)
     build_town_pages(data)
     build_seo_files(data)
+    import shutil
+    docs_dir = os.path.join(BASE_DIR, "docs")
+    if os.path.exists(docs_dir):
+        shutil.rmtree(docs_dir)
+    shutil.copytree(SITE_DIR, docs_dir)
+    with open(os.path.join(docs_dir, ".nojekyll"), "w") as nf:
+        nf.write("")
+    print(f"[OK] Synced site to {docs_dir} for GitHub Pages")
 
 
 if __name__ == "__main__":

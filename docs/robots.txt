@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nhoiltracker.com/sitemap.xml
