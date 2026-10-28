@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Southern NH & Merrimack Valley Heating Oil & Propane Price Scraper
+Southern NH, Seacoast & Merrimack Valley Heating Oil & Propane Price Scraper
 Scrapes live C.O.D. #2 heating oil and propane prices from:
   1. Direct local dealer websites (B&H Oil, Fuel NRG, SNH Energy, Nashua Fuel,
      MacKenzie Fuels, Buxton Oil & Propane, Granite State Oil, Shattuck Oil,
@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 os.makedirs(DATA_DIR, exist_ok=True)
 
-TODAY_STR = datetime.date.today().isoformat()  # 2026-10-27
+TODAY_STR = datetime.date.today().isoformat()
 NOW_ET = datetime.datetime.now().strftime("%Y-%m-%d %I:%M %p ET")
 
 TARGET_TOWNS = [
@@ -38,10 +38,18 @@ TARGET_TOWNS = [
     {"slug": "derry-nh", "name": "Derry", "state": "NH", "zip": "03038", "county": "Rockingham County"},
     {"slug": "londonderry-nh", "name": "Londonderry", "state": "NH", "zip": "03053", "county": "Rockingham County"},
     {"slug": "salem-nh", "name": "Salem", "state": "NH", "zip": "03079", "county": "Rockingham County"},
+    {"slug": "windham-nh", "name": "Windham", "state": "NH", "zip": "03087", "county": "Rockingham County"},
+    {"slug": "pelham-nh", "name": "Pelham", "state": "NH", "zip": "03076", "county": "Hillsborough County"},
+    {"slug": "hudson-nh", "name": "Hudson", "state": "NH", "zip": "03051", "county": "Hillsborough County"},
+    {"slug": "nashua-nh", "name": "Nashua", "state": "NH", "zip": "03060", "county": "Hillsborough County"},
+    {"slug": "manchester-nh", "name": "Manchester", "state": "NH", "zip": "03101", "county": "Hillsborough County"},
     {"slug": "exeter-nh", "name": "Exeter", "state": "NH", "zip": "03833", "county": "Rockingham County"},
     {"slug": "epping-nh", "name": "Epping", "state": "NH", "zip": "03042", "county": "Rockingham County"},
     {"slug": "raymond-nh", "name": "Raymond", "state": "NH", "zip": "03077", "county": "Rockingham County"},
     {"slug": "chester-nh", "name": "Chester", "state": "NH", "zip": "03036", "county": "Rockingham County"},
+    {"slug": "portsmouth-nh", "name": "Portsmouth", "state": "NH", "zip": "03801", "county": "Rockingham County"},
+    {"slug": "hampton-nh", "name": "Hampton", "state": "NH", "zip": "03842", "county": "Rockingham County"},
+    {"slug": "seabrook-nh", "name": "Seabrook", "state": "NH", "zip": "03874", "county": "Rockingham County"},
     {"slug": "haverhill-ma", "name": "Haverhill", "state": "MA", "zip": "01830", "county": "Essex County"},
 ]
 
@@ -166,7 +174,7 @@ def scrape_direct_dealers():
 
 
 def scrape_gethomeheat():
-    """Scrape supplier tables across Rockingham County towns on GetHomeHeat."""
+    """Scrape supplier tables across Southern NH, Seacoast & Merrimack Valley towns on GetHomeHeat."""
     results = {}
     town_paths = [
         ("Derry", "nh/derry"),
@@ -180,6 +188,14 @@ def scrape_gethomeheat():
         ("Epping", "nh/epping"),
         ("Raymond", "nh/raymond"),
         ("Sandown", "nh/sandown"),
+        ("Windham", "nh/windham"),
+        ("Pelham", "nh/pelham"),
+        ("Hudson", "nh/hudson"),
+        ("Nashua", "nh/nashua"),
+        ("Manchester", "nh/manchester"),
+        ("Portsmouth", "nh/portsmouth"),
+        ("Hampton", "nh/hampton"),
+        ("Seabrook", "nh/seabrook"),
         ("Haverhill", "ma/haverhill"),
     ]
     for town_name, path in town_paths:
@@ -257,7 +273,7 @@ def build_master_dataset():
     danville_hist = scrape_oilandelectric_danville_history()
     print(f"  -> Historical daily entries captured: {len(danville_hist)}")
 
-    # Master curated & live-verified dealer catalog for Southern NH & Merrimack Valley
+    # Master curated & live-verified dealer catalog for Southern NH, Seacoast & Merrimack Valley
     dealers = [
         {
             "id": "b-and-h-oil",
@@ -279,7 +295,8 @@ def build_master_dataset():
             "featured": False,
             "towns_served": [
                 "Danville", "Salem", "Derry", "Hampstead", "Plaistow",
-                "Londonderry", "Atkinson", "Chester", "Sandown"
+                "Londonderry", "Atkinson", "Chester", "Sandown",
+                "Windham", "Pelham", "Hudson"
             ],
         },
         {
@@ -292,16 +309,17 @@ def build_master_dataset():
             "propane_price_per_gal": None,
             "min_gallons": 150,
             "phone": "(603) 988-0555",
-            "email": None,
+            "email": "team@flagshipfuelco.com",
             "website": "https://flagshipfuelco.com",
             "fuels": ["Heating Oil", "Diesel"],
             "payment_terms": "Cash, Check, Credit/Debit Card",
-            "notes": "Fast online ordering serving Eastern Rockingham County, Kingston, Epping, and Exeter.",
+            "notes": "Fast online ordering serving Portsmouth, Hampton, Seabrook, Exeter, Kingston, and Epping.",
             "verified_source": "GetHomeHeat & flagshipfuelco.com",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
-                "Kingston", "Epping", "Exeter", "Danville", "Raymond"
+                "Kingston", "Epping", "Exeter", "Danville", "Raymond",
+                "Portsmouth", "Hampton", "Seabrook"
             ],
         },
         {
@@ -318,12 +336,13 @@ def build_master_dataset():
             "website": "https://wickedwarm.com",
             "fuels": ["Heating Oil"],
             "payment_terms": "Online Order, Credit/Debit Card",
-            "notes": "Discount online fuel ordering covering Seacoast & Rockingham County towns.",
+            "notes": "Discount online fuel ordering covering Portsmouth, Hampton, Seabrook, Exeter & Rockingham County.",
             "verified_source": "GetHomeHeat & wickedwarm.com",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
-                "Atkinson", "Sandown", "Exeter", "Kingston", "Epping"
+                "Atkinson", "Sandown", "Exeter", "Kingston", "Epping",
+                "Portsmouth", "Hampton", "Seabrook"
             ],
         },
         {
@@ -331,21 +350,22 @@ def build_master_dataset():
             "name": "Colonial Oil / County Energy Products",
             "hq_town": "Chelmsford",
             "hq_state": "MA",
-            "price_per_gal": direct.get("colonial-county-energy", 5.589),
-            "credit_price_per_gal": round(direct.get("colonial-county-energy", 5.589) * 1.015, 3),
+            "price_per_gal": direct.get("colonial-county-energy", 5.579),
+            "credit_price_per_gal": round(direct.get("colonial-county-energy", 5.579) * 1.015, 3),
             "propane_price_per_gal": direct.get("colonial-county-propane", 2.999),
             "min_gallons": 150,
             "phone": "(978) 256-0151",
-            "email": None,
+            "email": "countyenergyproducts@gmail.com",
             "website": "https://countyenergyproducts.com",
             "fuels": ["Heating Oil", "Propane", "Kerosene", "Diesel"],
             "payment_terms": "Cash, Check, E-Check (+1.5% Credit Card)",
-            "notes": "NH Heating Oil $5.589/gal; Heating Propane as low as $2.999/gal; Kerosene $6.989/gal.",
+            "notes": "NH Heating Oil $5.579/gal; Heating Propane as low as $2.999/gal; $50 Oil / $100 Propane Referral Bonus.",
             "verified_source": "Direct Website (countyenergyproducts.com) & CheapHeatingOil",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
-                "Derry", "Londonderry", "Salem", "Haverhill"
+                "Derry", "Londonderry", "Salem", "Haverhill",
+                "Windham", "Pelham", "Hudson", "Nashua"
             ],
         },
         {
@@ -362,13 +382,14 @@ def build_master_dataset():
             "website": "https://fuelnrg.co/",
             "fuels": ["Heating Oil", "Propane", "Kerosene", "Diesel"],
             "payment_terms": "Cash/Check ($5.599) or Credit Card ($5.699)",
-            "notes": "Lowest verified 100-gallon minimum price directly serving Danville, Derry, Salem & Hampstead.",
+            "notes": "Lowest verified 100-gallon minimum price directly serving Danville, Windham, Derry, Salem, Nashua & Manchester.",
             "verified_source": "Direct Website (fuelnrg.co), OilAndElectric & GetHomeHeat",
             "last_checked": TODAY_STR,
             "featured": True,
             "towns_served": [
                 "Danville", "Hampstead", "Kingston", "Sandown", "Plaistow",
-                "Atkinson", "Derry", "Londonderry", "Salem", "Raymond", "Chester"
+                "Atkinson", "Derry", "Londonderry", "Salem", "Raymond", "Chester",
+                "Windham", "Pelham", "Hudson", "Nashua", "Manchester"
             ],
         },
         {
@@ -381,7 +402,7 @@ def build_master_dataset():
             "propane_price_per_gal": None,
             "min_gallons": 100,
             "phone": "(603) 479-9282",
-            "email": None,
+            "email": "info@snhenergy.com",
             "website": "https://www.snhenergy.com",
             "fuels": ["Heating Oil", "Diesel"],
             "payment_terms": "Cash or Credit Card (same price $5.69/gal)",
@@ -391,7 +412,8 @@ def build_master_dataset():
             "featured": False,
             "towns_served": [
                 "Danville", "Hampstead", "Kingston", "Sandown", "Atkinson",
-                "Derry", "Londonderry", "Salem", "Chester"
+                "Derry", "Londonderry", "Salem", "Chester",
+                "Windham", "Pelham", "Hudson", "Manchester"
             ],
         },
         {
@@ -408,13 +430,14 @@ def build_master_dataset():
             "website": "https://www.nashuafuel.com",
             "fuels": ["Heating Oil", "Diesel"],
             "payment_terms": "Cash, Credit Card",
-            "notes": "150-gallon minimum order; no night/weekend fees keeps daily C.O.D. rates low.",
+            "notes": "150-gallon minimum order; no night/weekend fees keeps daily C.O.D. rates low across Nashua & Southern NH.",
             "verified_source": "Direct Website (nashuafuel.com), OilAndElectric & GetHomeHeat",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
                 "Danville", "Hampstead", "Sandown", "Atkinson", "Derry",
-                "Londonderry", "Salem", "Raymond", "Chester"
+                "Londonderry", "Salem", "Raymond", "Chester",
+                "Windham", "Pelham", "Hudson", "Nashua", "Manchester"
             ],
         },
         {
@@ -432,11 +455,12 @@ def build_master_dataset():
             "fuels": ["Heating Oil"],
             "payment_terms": "Cash on Delivery (-$0.02/gal) or Card when ordering",
             "notes": "100-149 gallon orders $5.70/gal; cash on delivery saves an extra $0.02/gal ($5.68/gal).",
-            "verified_source": "CheapHeatingOil (Derry/Candia NH)",
+            "verified_source": "CheapHeatingOil (Manchester/Derry NH)",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
-                "Derry", "Londonderry", "Chester", "Raymond"
+                "Derry", "Londonderry", "Chester", "Raymond",
+                "Manchester", "Windham", "Hudson", "Nashua"
             ],
         },
         {
@@ -453,12 +477,13 @@ def build_master_dataset():
             "website": "https://nibrocoil.com",
             "fuels": ["Heating Oil", "Kerosene"],
             "payment_terms": "Cash, Check, Credit Card",
-            "notes": "Heating oil $5.749/gal cash ($5.899 retail); K-1 Kerosene $6.899/gal.",
+            "notes": "Heating oil $5.749/gal cash ($5.899 retail); K-1 Kerosene $6.899/gal across Seacoast & Exeter.",
             "verified_source": "Direct Website (nibrocoil.com) & GetHomeHeat",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
-                "Plaistow", "Exeter", "Epping", "Kingston"
+                "Plaistow", "Exeter", "Epping", "Kingston",
+                "Portsmouth", "Hampton", "Seabrook"
             ],
         },
         {
@@ -475,12 +500,13 @@ def build_master_dataset():
             "website": "https://www.discountenergy.org",
             "fuels": ["Heating Oil", "Kerosene"],
             "payment_terms": "Credit Card, Debit Card, Check",
-            "notes": "100-gallon minimum order serving Kingston, Epping, Raymond, and Exeter.",
+            "notes": "100-gallon minimum order serving Kingston, Epping, Raymond, Exeter, and the NH Seacoast.",
             "verified_source": "GetHomeHeat & discountenergy.org",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
-                "Kingston", "Epping", "Raymond", "Exeter"
+                "Kingston", "Epping", "Raymond", "Exeter",
+                "Portsmouth", "Hampton", "Seabrook"
             ],
         },
         {
@@ -493,17 +519,18 @@ def build_master_dataset():
             "propane_price_per_gal": None,
             "min_gallons": 150,
             "phone": "(603) 926-6003",
-            "email": None,
+            "email": "info@mackenziefuels.com",
             "website": "https://mackenziefuels.com",
             "fuels": ["Heating Oil", "Propane"],
             "payment_terms": "Cash, Check, Credit Card",
-            "notes": "$5.799/gal will-call or $5.699/gal with automatic delivery. Full-service oil & propane.",
+            "notes": "$5.799/gal will-call or $5.699/gal with automatic delivery. Full-service Seacoast & Rockingham oil & propane.",
             "verified_source": "Direct Website (mackenziefuels.com) & GetHomeHeat",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
                 "Danville", "Hampstead", "Kingston", "Sandown", "Plaistow",
-                "Atkinson", "Derry", "Salem", "Exeter", "Epping", "Raymond", "Chester"
+                "Atkinson", "Derry", "Salem", "Exeter", "Epping", "Raymond", "Chester",
+                "Windham", "Portsmouth", "Hampton", "Seabrook"
             ],
         },
         {
@@ -520,19 +547,20 @@ def build_master_dataset():
             "website": "https://granitestateoil.com",
             "fuels": ["Heating Oil"],
             "payment_terms": "Cash, Check, Credit Card",
-            "notes": "Local since 2006; $5.799/gal premium heating oil across Rockingham County.",
+            "notes": "Local since 2006; $5.799/gal premium heating oil across the NH Seacoast & Rockingham County.",
             "verified_source": "Direct Website (granitestateoil.com) & GetHomeHeat",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
-                "Hampstead", "Plaistow", "Exeter", "Kingston", "Atkinson", "Epping"
+                "Hampstead", "Plaistow", "Exeter", "Kingston", "Atkinson", "Epping",
+                "Portsmouth", "Hampton", "Seabrook"
             ],
         },
         {
             "id": "shattuck-oil-co",
             "name": "Shattuck Oil Co.",
             "hq_town": "Pepperell",
-            "hq_state": "MA",
+            "hq_state": "NH/MA",
             "price_per_gal": direct.get("shattuck-oil-co", 5.799),
             "credit_price_per_gal": 5.799,
             "propane_price_per_gal": None,
@@ -542,12 +570,12 @@ def build_master_dataset():
             "website": "https://shattuckoil.com",
             "fuels": ["Heating Oil", "Diesel"],
             "payment_terms": "Cash, Check, Credit Card (Senior Discount Available)",
-            "notes": "Posted 10/27/26 cash price $5.799/gal (150-gallon minimum). Senior discount & 24hr service.",
+            "notes": "Posted cash price $5.799/gal (150-gallon minimum). Senior discount & 24hr service across Nashua, Hudson, Pelham & Windham.",
             "verified_source": "Direct Website (shattuckoil.com) & GetHomeHeat",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
-                "Derry", "Londonderry"
+                "Derry", "Londonderry", "Windham", "Pelham", "Hudson", "Nashua"
             ],
         },
         {
@@ -564,12 +592,13 @@ def build_master_dataset():
             "website": "https://fieldingsoil.com",
             "fuels": ["Heating Oil", "Propane", "Kerosene"],
             "payment_terms": "Cash, Check, Card, Pre-Buy / Budget",
-            "notes": "Full-service oil, K-1 kerosene & propane covering Exeter, Seacoast & Concord/Manchester routes.",
+            "notes": "Full-service oil, K-1 kerosene & propane covering Portsmouth, Hampton, Exeter, Seacoast & Manchester routes.",
             "verified_source": "CheapHeatingOil & fieldingsoil.com",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
-                "Exeter", "Epping", "Kingston", "Raymond"
+                "Exeter", "Epping", "Kingston", "Raymond",
+                "Portsmouth", "Hampton", "Seabrook", "Manchester"
             ],
         },
         {
@@ -586,12 +615,12 @@ def build_master_dataset():
             "website": "https://hebertfuel.com",
             "fuels": ["Heating Oil"],
             "payment_terms": "Cash, Check, Credit Card",
-            "notes": "Serves Western/Northern Rockingham County including Epping, Raymond, and Chester.",
+            "notes": "Serves Manchester, Pelham, and Western/Northern Rockingham County including Epping, Raymond, and Chester.",
             "verified_source": "GetHomeHeat & hebertfuel.com",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
-                "Epping", "Raymond", "Chester"
+                "Epping", "Raymond", "Chester", "Manchester", "Pelham"
             ],
         },
         {
@@ -614,7 +643,8 @@ def build_master_dataset():
             "featured": False,
             "towns_served": [
                 "Danville", "Hampstead", "Kingston", "Sandown", "Plaistow",
-                "Atkinson", "Derry", "Londonderry", "Salem", "Raymond", "Haverhill"
+                "Atkinson", "Derry", "Londonderry", "Salem", "Raymond", "Haverhill",
+                "Windham", "Pelham", "Hudson", "Manchester", "Hampton", "Seabrook"
             ],
         },
         {
@@ -638,7 +668,9 @@ def build_master_dataset():
             "towns_served": [
                 "Danville", "Hampstead", "Kingston", "Sandown", "Plaistow",
                 "Atkinson", "Derry", "Londonderry", "Salem", "Exeter",
-                "Epping", "Raymond", "Chester", "Haverhill"
+                "Epping", "Raymond", "Chester", "Haverhill",
+                "Windham", "Pelham", "Hudson", "Manchester",
+                "Portsmouth", "Hampton", "Seabrook"
             ],
         },
         {
@@ -655,12 +687,13 @@ def build_master_dataset():
             "website": "https://www.abscoheating.com",
             "fuels": ["Heating Oil"],
             "payment_terms": "Cash, Check, Credit/Debit Card",
-            "notes": "100-gallon minimum order; 24-hour emergency burner & HVAC service.",
+            "notes": "100-gallon minimum order; 24-hour emergency burner & HVAC service across Manchester & Southern NH.",
             "verified_source": "OilAndElectric ($5.899) & GetHomeHeat ($5.90)",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
-                "Derry", "Londonderry", "Chester", "Raymond"
+                "Derry", "Londonderry", "Chester", "Raymond",
+                "Manchester", "Windham", "Hudson", "Nashua"
             ],
         },
         {
@@ -677,14 +710,16 @@ def build_master_dataset():
             "website": "https://www.haffners.com",
             "fuels": ["Heating Oil", "Propane", "Kerosene"],
             "payment_terms": "Credit Card, Check (Senior Discount Available)",
-            "notes": "Major Merrimack Valley & Southern NH oil and propane supplier serving all 14 local towns.",
+            "notes": "Major Merrimack Valley, Seacoast & Southern NH oil and propane supplier serving all 22 local towns.",
             "verified_source": "GetHomeHeat & haffners.com",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
                 "Danville", "Hampstead", "Kingston", "Sandown", "Plaistow",
                 "Atkinson", "Derry", "Londonderry", "Salem", "Exeter",
-                "Epping", "Raymond", "Chester", "Haverhill"
+                "Epping", "Raymond", "Chester", "Haverhill",
+                "Windham", "Pelham", "Hudson", "Nashua",
+                "Manchester", "Portsmouth", "Hampton", "Seabrook"
             ],
         },
         {
@@ -708,7 +743,9 @@ def build_master_dataset():
             "towns_served": [
                 "Danville", "Hampstead", "Kingston", "Sandown", "Plaistow",
                 "Atkinson", "Derry", "Londonderry", "Salem", "Exeter",
-                "Epping", "Raymond", "Chester", "Haverhill"
+                "Epping", "Raymond", "Chester", "Haverhill",
+                "Windham", "Pelham", "Hudson", "Nashua",
+                "Manchester", "Portsmouth", "Hampton", "Seabrook"
             ],
         },
         {
@@ -725,13 +762,13 @@ def build_master_dataset():
             "website": "https://leosfuelnh.com/",
             "fuels": ["Heating Oil", "Kerosene"],
             "payment_terms": "Cash, Check, Credit Card",
-            "notes": "Hometown Plaistow oil dealer serving Danville, Plaistow, Hampstead, Kingston, Sandown & Atkinson. Call for today's cash price.",
+            "notes": "Hometown Plaistow oil dealer serving Danville, Plaistow, Hampstead, Kingston, Sandown, Atkinson, Windham & Pelham. Call for today's cash price.",
             "verified_source": "GetHomeHeat & leosfuelnh.com",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
                 "Danville", "Hampstead", "Kingston", "Sandown", "Plaistow",
-                "Atkinson", "Salem", "Raymond"
+                "Atkinson", "Salem", "Raymond", "Windham", "Pelham"
             ],
         },
         {
@@ -748,13 +785,13 @@ def build_master_dataset():
             "website": "https://simardgas.com",
             "fuels": ["Heating Oil", "Propane"],
             "payment_terms": "Cash, Check, Credit Card",
-            "notes": "Local Haverhill oil & propane dealer delivering across border towns (Danville, Plaistow, Hampstead, Atkinson, Kingston, Salem).",
+            "notes": "Local Haverhill oil & propane dealer delivering across border towns (Danville, Plaistow, Hampstead, Atkinson, Kingston, Salem, Windham, Seabrook).",
             "verified_source": "GetHomeHeat",
             "last_checked": TODAY_STR,
             "featured": False,
             "towns_served": [
                 "Danville", "Hampstead", "Kingston", "Sandown", "Plaistow",
-                "Atkinson", "Salem", "Haverhill"
+                "Atkinson", "Salem", "Haverhill", "Windham", "Seabrook"
             ],
         },
     ]
@@ -792,7 +829,7 @@ def build_master_dataset():
             "cheapest_dealer": t_cheapest_dealer,
         })
 
-    # Add today's Oct 27 entry to Danville 30-day history if not present
+    # Add today's entry to Danville 30-day history if not present
     danville_summary = next(ts for ts in town_summaries if ts["slug"] == "danville-nh")
     if not any(h["date"] == TODAY_STR for h in danville_hist):
         danville_hist.append({
@@ -804,7 +841,7 @@ def build_master_dataset():
     payload = {
         "updated_date": TODAY_STR,
         "updated_timestamp": NOW_ET,
-        "region": "Southern NH, Rockingham County & Merrimack Valley",
+        "region": "Southern NH, Rockingham & Hillsborough Counties, NH Seacoast & Merrimack Valley",
         "primary_town": "Danville, NH (03819)",
         "summary": {
             "lowest_oil_price": lowest_oil,
@@ -825,6 +862,7 @@ def build_master_dataset():
             "nh_doe_kerosene_benchmark": 6.910,
             "total_dealers_tracked": len(dealers),
             "priced_dealers_tracked": len(priced),
+            "total_towns_tracked": len(town_summaries),
         },
         "towns": town_summaries,
         "dealers": dealers,
@@ -834,7 +872,7 @@ def build_master_dataset():
     prices_json_path = os.path.join(DATA_DIR, "prices.json")
     with open(prices_json_path, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2)
-    print(f"[OK] Wrote {prices_json_path}")
+    print(f"[OK] Wrote {prices_json_path} ({len(town_summaries)} towns, {len(dealers)} dealers)")
 
     # Write / update price_history.csv
     csv_path = os.path.join(DATA_DIR, "price_history.csv")
@@ -860,7 +898,7 @@ def build_master_dataset():
             "website": "https://oilandelectric.com/heating-oil/nh/danville",
             "verified_source": f"OilAndElectric 30d History (Median ${h['median']:.2f})",
         })
-    # Append today's Oct 27, 2026 live dealer snapshots
+    # Append today's live dealer snapshots
     for d in dealers:
         rows_to_write.append({
             "date": TODAY_STR,

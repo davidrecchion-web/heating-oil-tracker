@@ -1,7 +1,7 @@
 {
   "updated_date": "2026-10-28",
-  "updated_timestamp": "2026-10-28 07:08 AM ET",
-  "region": "Southern NH, Rockingham County & Merrimack Valley",
+  "updated_timestamp": "2026-10-28 09:59 AM ET",
+  "region": "Southern NH, Rockingham & Hillsborough Counties, NH Seacoast & Merrimack Valley",
   "primary_town": "Danville, NH (03819)",
   "summary": {
     "lowest_oil_price": 5.499,
@@ -21,7 +21,8 @@
     "nh_doe_propane_benchmark": 4.12,
     "nh_doe_kerosene_benchmark": 6.91,
     "total_dealers_tracked": 22,
-    "priced_dealers_tracked": 19
+    "priced_dealers_tracked": 19,
+    "total_towns_tracked": 22
   },
   "towns": [
     {
@@ -178,6 +179,91 @@
       "cheapest_dealer": "B & H Oil Company"
     },
     {
+      "slug": "windham-nh",
+      "name": "Windham",
+      "state": "NH",
+      "zip": "03087",
+      "county": "Rockingham County",
+      "dealer_count": 15,
+      "priced_dealer_count": 12,
+      "lowest_price": 5.499,
+      "average_price": 5.743,
+      "highest_price": 5.9,
+      "cost_150_low": 824.85,
+      "cost_150_avg": 861.45,
+      "savings_150_vs_high": 60.15,
+      "savings_150_vs_state": 79.65,
+      "cheapest_dealer": "B & H Oil Company"
+    },
+    {
+      "slug": "pelham-nh",
+      "name": "Pelham",
+      "state": "NH",
+      "zip": "03076",
+      "county": "Hillsborough County",
+      "dealer_count": 12,
+      "priced_dealer_count": 10,
+      "lowest_price": 5.499,
+      "average_price": 5.731,
+      "highest_price": 5.9,
+      "cost_150_low": 824.85,
+      "cost_150_avg": 859.65,
+      "savings_150_vs_high": 60.15,
+      "savings_150_vs_state": 79.65,
+      "cheapest_dealer": "B & H Oil Company"
+    },
+    {
+      "slug": "hudson-nh",
+      "name": "Hudson",
+      "state": "NH",
+      "zip": "03051",
+      "county": "Hillsborough County",
+      "dealer_count": 12,
+      "priced_dealer_count": 11,
+      "lowest_price": 5.499,
+      "average_price": 5.738,
+      "highest_price": 5.9,
+      "cost_150_low": 824.85,
+      "cost_150_avg": 860.7,
+      "savings_150_vs_high": 60.15,
+      "savings_150_vs_state": 79.65,
+      "cheapest_dealer": "B & H Oil Company"
+    },
+    {
+      "slug": "nashua-nh",
+      "name": "Nashua",
+      "state": "NH",
+      "zip": "03060",
+      "county": "Hillsborough County",
+      "dealer_count": 8,
+      "priced_dealer_count": 7,
+      "lowest_price": 5.579,
+      "average_price": 5.739,
+      "highest_price": 5.9,
+      "cost_150_low": 836.85,
+      "cost_150_avg": 860.85,
+      "savings_150_vs_high": 48.15,
+      "savings_150_vs_state": 67.65,
+      "cheapest_dealer": "Colonial Oil / County Energy Products"
+    },
+    {
+      "slug": "manchester-nh",
+      "name": "Manchester",
+      "state": "NH",
+      "zip": "03101",
+      "county": "Hillsborough County",
+      "dealer_count": 11,
+      "priced_dealer_count": 10,
+      "lowest_price": 5.599,
+      "average_price": 5.784,
+      "highest_price": 5.9,
+      "cost_150_low": 839.85,
+      "cost_150_avg": 867.6,
+      "savings_150_vs_high": 45.15,
+      "savings_150_vs_state": 64.65,
+      "cheapest_dealer": "Fuel NRG"
+    },
+    {
       "slug": "exeter-nh",
       "name": "Exeter",
       "state": "NH",
@@ -246,6 +332,57 @@
       "cheapest_dealer": "B & H Oil Company"
     },
     {
+      "slug": "portsmouth-nh",
+      "name": "Portsmouth",
+      "state": "NH",
+      "zip": "03801",
+      "county": "Rockingham County",
+      "dealer_count": 10,
+      "priced_dealer_count": 9,
+      "lowest_price": 5.57,
+      "average_price": 5.764,
+      "highest_price": 5.9,
+      "cost_150_low": 835.5,
+      "cost_150_avg": 864.6,
+      "savings_150_vs_high": 49.5,
+      "savings_150_vs_state": 69.0,
+      "cheapest_dealer": "Flagship Fuel Co."
+    },
+    {
+      "slug": "hampton-nh",
+      "name": "Hampton",
+      "state": "NH",
+      "zip": "03842",
+      "county": "Rockingham County",
+      "dealer_count": 11,
+      "priced_dealer_count": 10,
+      "lowest_price": 5.57,
+      "average_price": 5.772,
+      "highest_price": 5.9,
+      "cost_150_low": 835.5,
+      "cost_150_avg": 865.8,
+      "savings_150_vs_high": 49.5,
+      "savings_150_vs_state": 69.0,
+      "cheapest_dealer": "Flagship Fuel Co."
+    },
+    {
+      "slug": "seabrook-nh",
+      "name": "Seabrook",
+      "state": "NH",
+      "zip": "03874",
+      "county": "Rockingham County",
+      "dealer_count": 12,
+      "priced_dealer_count": 10,
+      "lowest_price": 5.57,
+      "average_price": 5.772,
+      "highest_price": 5.9,
+      "cost_150_low": 835.5,
+      "cost_150_avg": 865.8,
+      "savings_150_vs_high": 49.5,
+      "savings_150_vs_state": 69.0,
+      "cheapest_dealer": "Flagship Fuel Co."
+    },
+    {
       "slug": "haverhill-ma",
       "name": "Haverhill",
       "state": "MA",
@@ -293,7 +430,10 @@
         "Londonderry",
         "Atkinson",
         "Chester",
-        "Sandown"
+        "Sandown",
+        "Windham",
+        "Pelham",
+        "Hudson"
       ]
     },
     {
@@ -306,14 +446,14 @@
       "propane_price_per_gal": null,
       "min_gallons": 150,
       "phone": "(603) 988-0555",
-      "email": null,
+      "email": "team@flagshipfuelco.com",
       "website": "https://flagshipfuelco.com",
       "fuels": [
         "Heating Oil",
         "Diesel"
       ],
       "payment_terms": "Cash, Check, Credit/Debit Card",
-      "notes": "Fast online ordering serving Eastern Rockingham County, Kingston, Epping, and Exeter.",
+      "notes": "Fast online ordering serving Portsmouth, Hampton, Seabrook, Exeter, Kingston, and Epping.",
       "verified_source": "GetHomeHeat & flagshipfuelco.com",
       "last_checked": "2026-10-28",
       "featured": false,
@@ -322,7 +462,10 @@
         "Epping",
         "Exeter",
         "Danville",
-        "Raymond"
+        "Raymond",
+        "Portsmouth",
+        "Hampton",
+        "Seabrook"
       ]
     },
     {
@@ -341,7 +484,7 @@
         "Heating Oil"
       ],
       "payment_terms": "Online Order, Credit/Debit Card",
-      "notes": "Discount online fuel ordering covering Seacoast & Rockingham County towns.",
+      "notes": "Discount online fuel ordering covering Portsmouth, Hampton, Seabrook, Exeter & Rockingham County.",
       "verified_source": "GetHomeHeat & wickedwarm.com",
       "last_checked": "2026-10-28",
       "featured": false,
@@ -350,7 +493,10 @@
         "Sandown",
         "Exeter",
         "Kingston",
-        "Epping"
+        "Epping",
+        "Portsmouth",
+        "Hampton",
+        "Seabrook"
       ]
     },
     {
@@ -363,7 +509,7 @@
       "propane_price_per_gal": 2.999,
       "min_gallons": 150,
       "phone": "(978) 256-0151",
-      "email": null,
+      "email": "countyenergyproducts@gmail.com",
       "website": "https://countyenergyproducts.com",
       "fuels": [
         "Heating Oil",
@@ -372,7 +518,7 @@
         "Diesel"
       ],
       "payment_terms": "Cash, Check, E-Check (+1.5% Credit Card)",
-      "notes": "NH Heating Oil $5.589/gal; Heating Propane as low as $2.999/gal; Kerosene $6.989/gal.",
+      "notes": "NH Heating Oil $5.579/gal; Heating Propane as low as $2.999/gal; $50 Oil / $100 Propane Referral Bonus.",
       "verified_source": "Direct Website (countyenergyproducts.com) & CheapHeatingOil",
       "last_checked": "2026-10-28",
       "featured": false,
@@ -380,7 +526,11 @@
         "Derry",
         "Londonderry",
         "Salem",
-        "Haverhill"
+        "Haverhill",
+        "Windham",
+        "Pelham",
+        "Hudson",
+        "Nashua"
       ]
     },
     {
@@ -402,7 +552,7 @@
         "Diesel"
       ],
       "payment_terms": "Cash/Check ($5.599) or Credit Card ($5.699)",
-      "notes": "Lowest verified 100-gallon minimum price directly serving Danville, Derry, Salem & Hampstead.",
+      "notes": "Lowest verified 100-gallon minimum price directly serving Danville, Windham, Derry, Salem, Nashua & Manchester.",
       "verified_source": "Direct Website (fuelnrg.co), OilAndElectric & GetHomeHeat",
       "last_checked": "2026-10-28",
       "featured": true,
@@ -417,7 +567,12 @@
         "Londonderry",
         "Salem",
         "Raymond",
-        "Chester"
+        "Chester",
+        "Windham",
+        "Pelham",
+        "Hudson",
+        "Nashua",
+        "Manchester"
       ]
     },
     {
@@ -430,7 +585,7 @@
       "propane_price_per_gal": null,
       "min_gallons": 100,
       "phone": "(603) 479-9282",
-      "email": null,
+      "email": "info@snhenergy.com",
       "website": "https://www.snhenergy.com",
       "fuels": [
         "Heating Oil",
@@ -450,7 +605,11 @@
         "Derry",
         "Londonderry",
         "Salem",
-        "Chester"
+        "Chester",
+        "Windham",
+        "Pelham",
+        "Hudson",
+        "Manchester"
       ]
     },
     {
@@ -470,7 +629,7 @@
         "Diesel"
       ],
       "payment_terms": "Cash, Credit Card",
-      "notes": "150-gallon minimum order; no night/weekend fees keeps daily C.O.D. rates low.",
+      "notes": "150-gallon minimum order; no night/weekend fees keeps daily C.O.D. rates low across Nashua & Southern NH.",
       "verified_source": "Direct Website (nashuafuel.com), OilAndElectric & GetHomeHeat",
       "last_checked": "2026-10-28",
       "featured": false,
@@ -483,7 +642,12 @@
         "Londonderry",
         "Salem",
         "Raymond",
-        "Chester"
+        "Chester",
+        "Windham",
+        "Pelham",
+        "Hudson",
+        "Nashua",
+        "Manchester"
       ]
     },
     {
@@ -503,14 +667,18 @@
       ],
       "payment_terms": "Cash on Delivery (-$0.02/gal) or Card when ordering",
       "notes": "100-149 gallon orders $5.70/gal; cash on delivery saves an extra $0.02/gal ($5.68/gal).",
-      "verified_source": "CheapHeatingOil (Derry/Candia NH)",
+      "verified_source": "CheapHeatingOil (Manchester/Derry NH)",
       "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Derry",
         "Londonderry",
         "Chester",
-        "Raymond"
+        "Raymond",
+        "Manchester",
+        "Windham",
+        "Hudson",
+        "Nashua"
       ]
     },
     {
@@ -530,7 +698,7 @@
         "Kerosene"
       ],
       "payment_terms": "Cash, Check, Credit Card",
-      "notes": "Heating oil $5.749/gal cash ($5.899 retail); K-1 Kerosene $6.899/gal.",
+      "notes": "Heating oil $5.749/gal cash ($5.899 retail); K-1 Kerosene $6.899/gal across Seacoast & Exeter.",
       "verified_source": "Direct Website (nibrocoil.com) & GetHomeHeat",
       "last_checked": "2026-10-28",
       "featured": false,
@@ -538,7 +706,10 @@
         "Plaistow",
         "Exeter",
         "Epping",
-        "Kingston"
+        "Kingston",
+        "Portsmouth",
+        "Hampton",
+        "Seabrook"
       ]
     },
     {
@@ -558,7 +729,7 @@
         "Kerosene"
       ],
       "payment_terms": "Credit Card, Debit Card, Check",
-      "notes": "100-gallon minimum order serving Kingston, Epping, Raymond, and Exeter.",
+      "notes": "100-gallon minimum order serving Kingston, Epping, Raymond, Exeter, and the NH Seacoast.",
       "verified_source": "GetHomeHeat & discountenergy.org",
       "last_checked": "2026-10-28",
       "featured": false,
@@ -566,7 +737,10 @@
         "Kingston",
         "Epping",
         "Raymond",
-        "Exeter"
+        "Exeter",
+        "Portsmouth",
+        "Hampton",
+        "Seabrook"
       ]
     },
     {
@@ -587,7 +761,7 @@
         "Kerosene"
       ],
       "payment_terms": "Cash, Check, Card, Pre-Buy / Budget",
-      "notes": "Full-service oil, K-1 kerosene & propane covering Exeter, Seacoast & Concord/Manchester routes.",
+      "notes": "Full-service oil, K-1 kerosene & propane covering Portsmouth, Hampton, Exeter, Seacoast & Manchester routes.",
       "verified_source": "CheapHeatingOil & fieldingsoil.com",
       "last_checked": "2026-10-28",
       "featured": false,
@@ -595,7 +769,11 @@
         "Exeter",
         "Epping",
         "Kingston",
-        "Raymond"
+        "Raymond",
+        "Portsmouth",
+        "Hampton",
+        "Seabrook",
+        "Manchester"
       ]
     },
     {
@@ -614,7 +792,7 @@
         "Heating Oil"
       ],
       "payment_terms": "Cash, Check, Credit Card",
-      "notes": "Local since 2006; $5.799/gal premium heating oil across Rockingham County.",
+      "notes": "Local since 2006; $5.799/gal premium heating oil across the NH Seacoast & Rockingham County.",
       "verified_source": "Direct Website (granitestateoil.com) & GetHomeHeat",
       "last_checked": "2026-10-28",
       "featured": false,
@@ -624,7 +802,10 @@
         "Exeter",
         "Kingston",
         "Atkinson",
-        "Epping"
+        "Epping",
+        "Portsmouth",
+        "Hampton",
+        "Seabrook"
       ]
     },
     {
@@ -637,14 +818,14 @@
       "propane_price_per_gal": null,
       "min_gallons": 150,
       "phone": "(603) 926-6003",
-      "email": null,
+      "email": "info@mackenziefuels.com",
       "website": "https://mackenziefuels.com",
       "fuels": [
         "Heating Oil",
         "Propane"
       ],
       "payment_terms": "Cash, Check, Credit Card",
-      "notes": "$5.799/gal will-call or $5.699/gal with automatic delivery. Full-service oil & propane.",
+      "notes": "$5.799/gal will-call or $5.699/gal with automatic delivery. Full-service Seacoast & Rockingham oil & propane.",
       "verified_source": "Direct Website (mackenziefuels.com) & GetHomeHeat",
       "last_checked": "2026-10-28",
       "featured": false,
@@ -660,14 +841,18 @@
         "Exeter",
         "Epping",
         "Raymond",
-        "Chester"
+        "Chester",
+        "Windham",
+        "Portsmouth",
+        "Hampton",
+        "Seabrook"
       ]
     },
     {
       "id": "shattuck-oil-co",
       "name": "Shattuck Oil Co.",
       "hq_town": "Pepperell",
-      "hq_state": "MA",
+      "hq_state": "NH/MA",
       "price_per_gal": 5.799,
       "credit_price_per_gal": 5.799,
       "propane_price_per_gal": null,
@@ -680,13 +865,17 @@
         "Diesel"
       ],
       "payment_terms": "Cash, Check, Credit Card (Senior Discount Available)",
-      "notes": "Posted 10/27/26 cash price $5.799/gal (150-gallon minimum). Senior discount & 24hr service.",
+      "notes": "Posted cash price $5.799/gal (150-gallon minimum). Senior discount & 24hr service across Nashua, Hudson, Pelham & Windham.",
       "verified_source": "Direct Website (shattuckoil.com) & GetHomeHeat",
       "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Derry",
-        "Londonderry"
+        "Londonderry",
+        "Windham",
+        "Pelham",
+        "Hudson",
+        "Nashua"
       ]
     },
     {
@@ -705,14 +894,16 @@
         "Heating Oil"
       ],
       "payment_terms": "Cash, Check, Credit Card",
-      "notes": "Serves Western/Northern Rockingham County including Epping, Raymond, and Chester.",
+      "notes": "Serves Manchester, Pelham, and Western/Northern Rockingham County including Epping, Raymond, and Chester.",
       "verified_source": "GetHomeHeat & hebertfuel.com",
       "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Epping",
         "Raymond",
-        "Chester"
+        "Chester",
+        "Manchester",
+        "Pelham"
       ]
     },
     {
@@ -748,7 +939,13 @@
         "Londonderry",
         "Salem",
         "Raymond",
-        "Haverhill"
+        "Haverhill",
+        "Windham",
+        "Pelham",
+        "Hudson",
+        "Manchester",
+        "Hampton",
+        "Seabrook"
       ]
     },
     {
@@ -767,7 +964,7 @@
         "Heating Oil"
       ],
       "payment_terms": "Cash, Check, Credit/Debit Card",
-      "notes": "100-gallon minimum order; 24-hour emergency burner & HVAC service.",
+      "notes": "100-gallon minimum order; 24-hour emergency burner & HVAC service across Manchester & Southern NH.",
       "verified_source": "OilAndElectric ($5.899) & GetHomeHeat ($5.90)",
       "last_checked": "2026-10-28",
       "featured": false,
@@ -775,7 +972,11 @@
         "Derry",
         "Londonderry",
         "Chester",
-        "Raymond"
+        "Raymond",
+        "Manchester",
+        "Windham",
+        "Hudson",
+        "Nashua"
       ]
     },
     {
@@ -814,7 +1015,14 @@
         "Epping",
         "Raymond",
         "Chester",
-        "Haverhill"
+        "Haverhill",
+        "Windham",
+        "Pelham",
+        "Hudson",
+        "Manchester",
+        "Portsmouth",
+        "Hampton",
+        "Seabrook"
       ]
     },
     {
@@ -835,7 +1043,7 @@
         "Kerosene"
       ],
       "payment_terms": "Credit Card, Check (Senior Discount Available)",
-      "notes": "Major Merrimack Valley & Southern NH oil and propane supplier serving all 14 local towns.",
+      "notes": "Major Merrimack Valley, Seacoast & Southern NH oil and propane supplier serving all 22 local towns.",
       "verified_source": "GetHomeHeat & haffners.com",
       "last_checked": "2026-10-28",
       "featured": false,
@@ -853,7 +1061,15 @@
         "Epping",
         "Raymond",
         "Chester",
-        "Haverhill"
+        "Haverhill",
+        "Windham",
+        "Pelham",
+        "Hudson",
+        "Nashua",
+        "Manchester",
+        "Portsmouth",
+        "Hampton",
+        "Seabrook"
       ]
     },
     {
@@ -873,7 +1089,7 @@
         "Kerosene"
       ],
       "payment_terms": "Cash, Check, Credit Card",
-      "notes": "Hometown Plaistow oil dealer serving Danville, Plaistow, Hampstead, Kingston, Sandown & Atkinson. Call for today's cash price.",
+      "notes": "Hometown Plaistow oil dealer serving Danville, Plaistow, Hampstead, Kingston, Sandown, Atkinson, Windham & Pelham. Call for today's cash price.",
       "verified_source": "GetHomeHeat & leosfuelnh.com",
       "last_checked": "2026-10-28",
       "featured": false,
@@ -885,7 +1101,9 @@
         "Plaistow",
         "Atkinson",
         "Salem",
-        "Raymond"
+        "Raymond",
+        "Windham",
+        "Pelham"
       ]
     },
     {
@@ -923,7 +1141,15 @@
         "Epping",
         "Raymond",
         "Chester",
-        "Haverhill"
+        "Haverhill",
+        "Windham",
+        "Pelham",
+        "Hudson",
+        "Nashua",
+        "Manchester",
+        "Portsmouth",
+        "Hampton",
+        "Seabrook"
       ]
     },
     {
@@ -943,7 +1169,7 @@
         "Propane"
       ],
       "payment_terms": "Cash, Check, Credit Card",
-      "notes": "Local Haverhill oil & propane dealer delivering across border towns (Danville, Plaistow, Hampstead, Atkinson, Kingston, Salem).",
+      "notes": "Local Haverhill oil & propane dealer delivering across border towns (Danville, Plaistow, Hampstead, Atkinson, Kingston, Salem, Windham, Seabrook).",
       "verified_source": "GetHomeHeat",
       "last_checked": "2026-10-28",
       "featured": false,
@@ -955,7 +1181,9 @@
         "Plaistow",
         "Atkinson",
         "Salem",
-        "Haverhill"
+        "Haverhill",
+        "Windham",
+        "Seabrook"
       ]
     }
   ],

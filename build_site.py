@@ -575,8 +575,8 @@ def render_dealer_rows(dealers, default_gal=150, state_bench=6.030):
             {save_html}
           </td>
           <td><span class="{min_cls}">{d['min_gallons']} gal min</span></td>
-          <td><a class="phone-link" href="tel:{d['phone']}">📞 {d['phone']}</a></td>
-          <td><a class="btn-order" href="{d['website']}" target="_blank" rel="noopener">Visit Dealer &rarr;</a></td>
+          <td><a class="phone-link" data-track-dealer="{d['name']}" data-track-type="phone" href="tel:{d['phone']}">📞 {d['phone']}</a></td>
+          <td><a class="btn-order" data-track-dealer="{d['name']}" data-track-type="web" href="{d['website']}{'&' if '?' in d['website'] else '?'}utm_source=nhoiltracker&amp;utm_medium=referral&amp;utm_campaign=directory" target="_blank" rel="noopener">Visit Dealer &rarr;</a></td>
         </tr>
         """)
     return "\n".join(rows_html)
@@ -588,7 +588,7 @@ def build_index_page(data):
     towns = data["towns"]
     hist = data["danville_30d_history"][-10:]  # last 10 days for clean display
 
-    town_options = ['<option value="ALL">All 14 Rockingham &amp; Merrimack Valley Towns</option>']
+    town_options = [f'<option value="ALL">All {len(towns)} Southern NH, Seacoast &amp; Merrimack Valley Towns</option>']
     for t in towns:
         sel = "selected" if t["slug"] == "danville-nh" else ""
         # Default to ALL on index so all 22 dealers show immediately, with Danville highlighted first in list
@@ -638,7 +638,7 @@ def build_index_page(data):
   <div class="topbar">
     <div class="topbar-inner">
       <div><span class="live-dot"></span><strong>LIVE DAILY TRACKER:</strong> Verified Cash-on-Delivery (#2 Fuel Oil &amp; Propane) &middot; Updated {data['updated_timestamp']}</div>
-      <div>Primary Coverage: <strong>Danville, NH (03819) &amp; Rockingham County</strong> &middot; <a href="#town-directory" style="color:#fdba74;">Browse 14 Local Towns &darr;</a></div>
+      <div>Primary Coverage: <strong>Danville, NH (03819) &amp; Rockingham County</strong> &middot; <a href="#town-directory" style="color:#fdba74;">Browse {len(towns)} Local Towns &darr;</a> &middot; <a href="?stats=1" onclick="if(window.openStatsModal){{event.preventDefault();window.openStatsModal();}}" style="color:#86efac;font-weight:700;">📊 Live Traffic &amp; Clicks</a></div>
     </div>
   </div>
 
@@ -703,8 +703,8 @@ def build_index_page(data):
         <strong>$5.599/gal Cash/Check</strong> ($839.85 for 150 gal) &middot; Only <strong>100-Gallon Minimum</strong> &middot; Delivers to Danville, Hampstead, Derry, Salem, Plaistow, Kingston &amp; Sandown.
       </div>
       <div style="display:flex;gap:0.6rem;align-items:center;">
-        <a class="phone-link" href="tel:6038933600">📞 (603) 893-3600</a>
-        <a class="btn-primary" href="https://fuelnrg.co/" target="_blank" rel="noopener">Order Online &rarr;</a>
+        <a class="phone-link" data-track-dealer="Fuel NRG" data-track-type="phone" href="tel:6038933600">📞 (603) 893-3600</a>
+        <a class="btn-primary" data-track-dealer="Fuel NRG" data-track-type="web" href="https://fuelnrg.co/?utm_source=nhoiltracker&amp;utm_medium=referral&amp;utm_campaign=featured_banner" target="_blank" rel="noopener">Order Online &rarr;</a>
       </div>
     </div>
 
@@ -829,8 +829,8 @@ def build_index_page(data):
         </p>
       </div>
       <div style="display:flex;flex-direction:column;gap:0.5rem;min-width:230px;">
-        <a class="btn-primary" style="text-align:center;padding:0.75rem 1.2rem;font-size:0.92rem;" href="mailto:dealers@nhoiltracker.com?subject=Featured%20Dealer%20Spot%20Inquiry">⭐ Get Featured ($79/mo) &rarr;</a>
-        <a style="text-align:center;color:#cbd5e1;font-size:0.82rem;" href="mailto:prices@nhoiltracker.com?subject=Update%20Daily%20Cash%20Oil%20Price">Submit Free Daily Price Update</a>
+        <a class="btn-primary" style="text-align:center;padding:0.75rem 1.2rem;font-size:0.92rem;" href="mailto:david.recchion@gmail.com?subject=Featured%20Dealer%20Spot%20Inquiry">⭐ Get Featured ($79/mo) &rarr;</a>
+        <a style="text-align:center;color:#cbd5e1;font-size:0.82rem;" href="mailto:david.recchion@gmail.com?subject=Update%20Daily%20Cash%20Oil%20Price">Submit Free Daily Price Update</a>
       </div>
     </section>
   </main>
@@ -904,6 +904,88 @@ def build_index_page(data):
         titleEl.textContent = 'Verified Dealers Delivering to ' + town + ' (' + visibleCount + ' Suppliers)';
       }}
     }}
+  </script>
+
+  <div id="statsModal" style="display:none;position:fixed;inset:0;background:rgba(15,23,42,0.75);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+    <div style="background:#fff;max-width:680px;width:100%;border-radius:14px;padding:1.5rem;max-height:88vh;overflow-y:auto;box-shadow:0 20px 50px rgba(0,0,0,0.35);">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e2e8f0;padding-bottom:0.75rem;margin-bottom:1rem;">
+        <div>
+          <h3 style="margin:0;font-size:1.2rem;color:#0f172a;">📊 Live Tracker Traffic &amp; Dealer Referral Clicks</h3>
+          <div style="font-size:0.8rem;color:#64748b;">Tracks pageviews &amp; outbound dealer clicks/calls + appends <code>?utm_source=nhoiltracker</code> to every dealer order link</div>
+        </div>
+        <button onclick="document.getElementById('statsModal').style.display='none'" style="background:#f1f5f9;border:none;border-radius:8px;padding:0.4rem 0.75rem;cursor:pointer;font-weight:700;">✕ Close</button>
+      </div>
+      <div id="statsContent" style="font-size:0.9rem;color:#1e293b;"></div>
+    </div>
+  </div>
+  <script data-goatcounter="https://nhoiltracker.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    (function() {{
+      const STORAGE_KEY = 'nh_oil_tracker_stats_v1';
+      function getStats() {{
+        try {{
+          return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {{ views: 0, pages: {{}}, clicks: {{}} }};
+        }} catch (e) {{
+          return {{ views: 0, pages: {{}}, clicks: {{}} }};
+        }}
+      }}
+      function saveStats(st) {{
+        try {{ localStorage.setItem(STORAGE_KEY, JSON.stringify(st)); }} catch (e) {{}}
+      }}
+      const st = getStats();
+      const pageKey = window.location.pathname.split('/').pop() || 'index.html';
+      st.views = (st.views || 0) + 1;
+      st.pages[pageKey] = (st.pages[pageKey] || 0) + 1;
+      st.lastVisit = new Date().toLocaleString();
+      saveStats(st);
+
+      document.querySelectorAll('[data-track-dealer]').forEach(el => {{
+        el.addEventListener('click', function() {{
+          const dealer = this.getAttribute('data-track-dealer');
+          const type = this.getAttribute('data-track-type') || 'click';
+          const s = getStats();
+          if (!s.clicks[dealer]) s.clicks[dealer] = {{ web: 0, phone: 0 }};
+          s.clicks[dealer][type] = (s.clicks[dealer][type] || 0) + 1;
+          saveStats(s);
+          if (window.goatcounter && window.goatcounter.count) {{
+            window.goatcounter.count({{ path: 'click-' + type + '-' + dealer.toLowerCase().replace(/[^a-z0-9]+/g, '-'), title: dealer + ' (' + type + ')', event: true }});
+          }}
+        }});
+      }});
+
+      window.openStatsModal = function() {{
+        const s = getStats();
+        const pageRows = Object.entries(s.pages || {{}}).sort((a,b) => b[1]-a[1]).map(([k,v]) => `<tr><td style="padding:6px 8px;border-bottom:1px solid #f1f5f9;"><code>${{k}}</code></td><td style="padding:6px 8px;border-bottom:1px solid #f1f5f9;font-weight:700;">${{v}} views</td></tr>`).join('');
+        const clickEntries = Object.entries(s.clicks || {{}});
+        const clickRows = clickEntries.length ? clickEntries.map(([d, c]) => `<tr><td style="padding:6px 8px;border-bottom:1px solid #f1f5f9;"><strong>${{d}}</strong></td><td style="padding:6px 8px;border-bottom:1px solid #f1f5f9;">${{c.web || 0}} website clicks</td><td style="padding:6px 8px;border-bottom:1px solid #f1f5f9;">${{c.phone || 0}} phone calls</td></tr>`).join('') : '<tr><td colspan="3" style="padding:8px;color:#64748b;">No outbound dealer clicks recorded in this browser yet — click any "Visit Dealer" or phone button to test!</td></tr>';
+        document.getElementById('statsContent').innerHTML = `
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-bottom:1rem;">
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:0.75rem;border-radius:10px;">
+              <div style="font-size:0.75rem;color:#64748b;text-transform:uppercase;font-weight:700;">Total Pageviews</div>
+              <div style="font-size:1.5rem;font-weight:800;color:#0f172a;">${{s.views}}</div>
+            </div>
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:0.75rem;border-radius:10px;">
+              <div style="font-size:0.75rem;color:#64748b;text-transform:uppercase;font-weight:700;">Town Pages Active</div>
+              <div style="font-size:1.5rem;font-weight:800;color:#15803d;">22 Towns</div>
+            </div>
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:0.75rem;border-radius:10px;">
+              <div style="font-size:0.75rem;color:#64748b;text-transform:uppercase;font-weight:700;">UTM Referral Tag</div>
+              <div style="font-size:0.95rem;font-weight:800;color:#ea580c;margin-top:4px;">?utm_source=nhoiltracker</div>
+            </div>
+          </div>
+          <h4 style="margin:0.75rem 0 0.4rem;font-size:0.95rem;">Outbound Dealer Clicks &amp; Calls</h4>
+          <table style="width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:0.85rem;">${{clickRows}}</table>
+          <h4 style="margin:0.75rem 0 0.4rem;font-size:0.95rem;">Pageviews by Town / Page</h4>
+          <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">${{pageRows}}</table>
+        `;
+        document.getElementById('statsModal').style.display = 'flex';
+      }};
+
+      if (window.location.search.includes('stats=1')) {{
+        window.addEventListener('DOMContentLoaded', window.openStatsModal);
+        setTimeout(window.openStatsModal, 150);
+      }}
+    }})();
   </script>
 </body>
 </html>
@@ -1067,6 +1149,88 @@ def build_town_pages(data):
         }}
       }});
     }}
+  </script>
+
+  <div id="statsModal" style="display:none;position:fixed;inset:0;background:rgba(15,23,42,0.75);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+    <div style="background:#fff;max-width:680px;width:100%;border-radius:14px;padding:1.5rem;max-height:88vh;overflow-y:auto;box-shadow:0 20px 50px rgba(0,0,0,0.35);">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e2e8f0;padding-bottom:0.75rem;margin-bottom:1rem;">
+        <div>
+          <h3 style="margin:0;font-size:1.2rem;color:#0f172a;">📊 Live Tracker Traffic &amp; Dealer Referral Clicks</h3>
+          <div style="font-size:0.8rem;color:#64748b;">Tracks pageviews &amp; outbound dealer clicks/calls + appends <code>?utm_source=nhoiltracker</code> to every dealer order link</div>
+        </div>
+        <button onclick="document.getElementById('statsModal').style.display='none'" style="background:#f1f5f9;border:none;border-radius:8px;padding:0.4rem 0.75rem;cursor:pointer;font-weight:700;">✕ Close</button>
+      </div>
+      <div id="statsContent" style="font-size:0.9rem;color:#1e293b;"></div>
+    </div>
+  </div>
+  <script data-goatcounter="https://nhoiltracker.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    (function() {{
+      const STORAGE_KEY = 'nh_oil_tracker_stats_v1';
+      function getStats() {{
+        try {{
+          return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {{ views: 0, pages: {{}}, clicks: {{}} }};
+        }} catch (e) {{
+          return {{ views: 0, pages: {{}}, clicks: {{}} }};
+        }}
+      }}
+      function saveStats(st) {{
+        try {{ localStorage.setItem(STORAGE_KEY, JSON.stringify(st)); }} catch (e) {{}}
+      }}
+      const st = getStats();
+      const pageKey = window.location.pathname.split('/').pop() || 'index.html';
+      st.views = (st.views || 0) + 1;
+      st.pages[pageKey] = (st.pages[pageKey] || 0) + 1;
+      st.lastVisit = new Date().toLocaleString();
+      saveStats(st);
+
+      document.querySelectorAll('[data-track-dealer]').forEach(el => {{
+        el.addEventListener('click', function() {{
+          const dealer = this.getAttribute('data-track-dealer');
+          const type = this.getAttribute('data-track-type') || 'click';
+          const s = getStats();
+          if (!s.clicks[dealer]) s.clicks[dealer] = {{ web: 0, phone: 0 }};
+          s.clicks[dealer][type] = (s.clicks[dealer][type] || 0) + 1;
+          saveStats(s);
+          if (window.goatcounter && window.goatcounter.count) {{
+            window.goatcounter.count({{ path: 'click-' + type + '-' + dealer.toLowerCase().replace(/[^a-z0-9]+/g, '-'), title: dealer + ' (' + type + ')', event: true }});
+          }}
+        }});
+      }});
+
+      window.openStatsModal = function() {{
+        const s = getStats();
+        const pageRows = Object.entries(s.pages || {{}}).sort((a,b) => b[1]-a[1]).map(([k,v]) => `<tr><td style="padding:6px 8px;border-bottom:1px solid #f1f5f9;"><code>${{k}}</code></td><td style="padding:6px 8px;border-bottom:1px solid #f1f5f9;font-weight:700;">${{v}} views</td></tr>`).join('');
+        const clickEntries = Object.entries(s.clicks || {{}});
+        const clickRows = clickEntries.length ? clickEntries.map(([d, c]) => `<tr><td style="padding:6px 8px;border-bottom:1px solid #f1f5f9;"><strong>${{d}}</strong></td><td style="padding:6px 8px;border-bottom:1px solid #f1f5f9;">${{c.web || 0}} website clicks</td><td style="padding:6px 8px;border-bottom:1px solid #f1f5f9;">${{c.phone || 0}} phone calls</td></tr>`).join('') : '<tr><td colspan="3" style="padding:8px;color:#64748b;">No outbound dealer clicks recorded in this browser yet — click any "Visit Dealer" or phone button to test!</td></tr>';
+        document.getElementById('statsContent').innerHTML = `
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-bottom:1rem;">
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:0.75rem;border-radius:10px;">
+              <div style="font-size:0.75rem;color:#64748b;text-transform:uppercase;font-weight:700;">Total Pageviews</div>
+              <div style="font-size:1.5rem;font-weight:800;color:#0f172a;">${{s.views}}</div>
+            </div>
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:0.75rem;border-radius:10px;">
+              <div style="font-size:0.75rem;color:#64748b;text-transform:uppercase;font-weight:700;">Town Pages Active</div>
+              <div style="font-size:1.5rem;font-weight:800;color:#15803d;">22 Towns</div>
+            </div>
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:0.75rem;border-radius:10px;">
+              <div style="font-size:0.75rem;color:#64748b;text-transform:uppercase;font-weight:700;">UTM Referral Tag</div>
+              <div style="font-size:0.95rem;font-weight:800;color:#ea580c;margin-top:4px;">?utm_source=nhoiltracker</div>
+            </div>
+          </div>
+          <h4 style="margin:0.75rem 0 0.4rem;font-size:0.95rem;">Outbound Dealer Clicks &amp; Calls</h4>
+          <table style="width:100%;border-collapse:collapse;margin-bottom:1rem;font-size:0.85rem;">${{clickRows}}</table>
+          <h4 style="margin:0.75rem 0 0.4rem;font-size:0.95rem;">Pageviews by Town / Page</h4>
+          <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">${{pageRows}}</table>
+        `;
+        document.getElementById('statsModal').style.display = 'flex';
+      }};
+
+      if (window.location.search.includes('stats=1')) {{
+        window.addEventListener('DOMContentLoaded', window.openStatsModal);
+        setTimeout(window.openStatsModal, 150);
+      }}
+    }})();
   </script>
 </body>
 </html>
