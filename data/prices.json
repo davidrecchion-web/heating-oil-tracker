@@ -1,15 +1,15 @@
 {
-  "updated_date": "2026-10-27",
-  "updated_timestamp": "2026-10-27 07:06 AM ET",
+  "updated_date": "2026-10-28",
+  "updated_timestamp": "2026-10-28 07:08 AM ET",
   "region": "Southern NH, Rockingham County & Merrimack Valley",
   "primary_town": "Danville, NH (03819)",
   "summary": {
     "lowest_oil_price": 5.499,
-    "average_oil_price": 5.737,
+    "average_oil_price": 5.736,
     "highest_oil_price": 5.9,
     "spread_per_gal": 0.401,
     "lowest_150_gal_cost": 824.85,
-    "average_150_gal_cost": 860.55,
+    "average_150_gal_cost": 860.4,
     "highest_150_gal_cost": 885.0,
     "spread_150_gal_savings": 60.15,
     "nh_eia_oil_benchmark": 6.03,
@@ -135,10 +135,10 @@
       "dealer_count": 13,
       "priced_dealer_count": 12,
       "lowest_price": 5.499,
-      "average_price": 5.744,
+      "average_price": 5.743,
       "highest_price": 5.9,
       "cost_150_low": 824.85,
-      "cost_150_avg": 861.6,
+      "cost_150_avg": 861.45,
       "savings_150_vs_high": 60.15,
       "savings_150_vs_state": 79.65,
       "cheapest_dealer": "B & H Oil Company"
@@ -169,10 +169,10 @@
       "dealer_count": 12,
       "priced_dealer_count": 9,
       "lowest_price": 5.499,
-      "average_price": 5.725,
+      "average_price": 5.724,
       "highest_price": 5.9,
       "cost_150_low": 824.85,
-      "cost_150_avg": 858.75,
+      "cost_150_avg": 858.6,
       "savings_150_vs_high": 60.15,
       "savings_150_vs_state": 79.65,
       "cheapest_dealer": "B & H Oil Company"
@@ -253,13 +253,13 @@
       "county": "Essex County",
       "dealer_count": 6,
       "priced_dealer_count": 4,
-      "lowest_price": 5.589,
-      "average_price": 5.809,
+      "lowest_price": 5.579,
+      "average_price": 5.807,
       "highest_price": 5.9,
-      "cost_150_low": 838.35,
-      "cost_150_avg": 871.35,
-      "savings_150_vs_high": 46.65,
-      "savings_150_vs_state": 66.15,
+      "cost_150_low": 836.85,
+      "cost_150_avg": 871.05,
+      "savings_150_vs_high": 48.15,
+      "savings_150_vs_state": 67.65,
       "cheapest_dealer": "Colonial Oil / County Energy Products"
     }
   ],
@@ -282,7 +282,7 @@
       "payment_terms": "Cash, Check, C.O.D., Credit Card",
       "notes": "Discounted rate ($5.499/gal) applies to orders of 150+ gallons. Family-owned in Salem since 1972.",
       "verified_source": "Direct Website (bandhoil.com) & GetHomeHeat",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Danville",
@@ -315,7 +315,7 @@
       "payment_terms": "Cash, Check, Credit/Debit Card",
       "notes": "Fast online ordering serving Eastern Rockingham County, Kingston, Epping, and Exeter.",
       "verified_source": "GetHomeHeat & flagshipfuelco.com",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Kingston",
@@ -343,7 +343,7 @@
       "payment_terms": "Online Order, Credit/Debit Card",
       "notes": "Discount online fuel ordering covering Seacoast & Rockingham County towns.",
       "verified_source": "GetHomeHeat & wickedwarm.com",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Atkinson",
@@ -358,8 +358,8 @@
       "name": "Colonial Oil / County Energy Products",
       "hq_town": "Chelmsford",
       "hq_state": "MA",
-      "price_per_gal": 5.589,
-      "credit_price_per_gal": 5.673,
+      "price_per_gal": 5.579,
+      "credit_price_per_gal": 5.663,
       "propane_price_per_gal": 2.999,
       "min_gallons": 150,
       "phone": "(978) 256-0151",
@@ -374,7 +374,7 @@
       "payment_terms": "Cash, Check, E-Check (+1.5% Credit Card)",
       "notes": "NH Heating Oil $5.589/gal; Heating Propane as low as $2.999/gal; Kerosene $6.989/gal.",
       "verified_source": "Direct Website (countyenergyproducts.com) & CheapHeatingOil",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Derry",
@@ -404,7 +404,7 @@
       "payment_terms": "Cash/Check ($5.599) or Credit Card ($5.699)",
       "notes": "Lowest verified 100-gallon minimum price directly serving Danville, Derry, Salem & Hampstead.",
       "verified_source": "Direct Website (fuelnrg.co), OilAndElectric & GetHomeHeat",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": true,
       "towns_served": [
         "Danville",
@@ -439,7 +439,7 @@
       "payment_terms": "Cash or Credit Card (same price $5.69/gal)",
       "notes": "100-gallon minimum; same low rate for cash or card. Based at 39 Rockingham Rd, Londonderry.",
       "verified_source": "Direct Website (snhenergy.com), CheapHeatingOil & GetHomeHeat",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Danville",
@@ -472,7 +472,7 @@
       "payment_terms": "Cash, Credit Card",
       "notes": "150-gallon minimum order; no night/weekend fees keeps daily C.O.D. rates low.",
       "verified_source": "Direct Website (nashuafuel.com), OilAndElectric & GetHomeHeat",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Danville",
@@ -504,7 +504,7 @@
       "payment_terms": "Cash on Delivery (-$0.02/gal) or Card when ordering",
       "notes": "100-149 gallon orders $5.70/gal; cash on delivery saves an extra $0.02/gal ($5.68/gal).",
       "verified_source": "CheapHeatingOil (Derry/Candia NH)",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Derry",
@@ -532,7 +532,7 @@
       "payment_terms": "Cash, Check, Credit Card",
       "notes": "Heating oil $5.749/gal cash ($5.899 retail); K-1 Kerosene $6.899/gal.",
       "verified_source": "Direct Website (nibrocoil.com) & GetHomeHeat",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Plaistow",
@@ -560,7 +560,7 @@
       "payment_terms": "Credit Card, Debit Card, Check",
       "notes": "100-gallon minimum order serving Kingston, Epping, Raymond, and Exeter.",
       "verified_source": "GetHomeHeat & discountenergy.org",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Kingston",
@@ -589,7 +589,7 @@
       "payment_terms": "Cash, Check, Card, Pre-Buy / Budget",
       "notes": "Full-service oil, K-1 kerosene & propane covering Exeter, Seacoast & Concord/Manchester routes.",
       "verified_source": "CheapHeatingOil & fieldingsoil.com",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Exeter",
@@ -616,7 +616,7 @@
       "payment_terms": "Cash, Check, Credit Card",
       "notes": "Local since 2006; $5.799/gal premium heating oil across Rockingham County.",
       "verified_source": "Direct Website (granitestateoil.com) & GetHomeHeat",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Hampstead",
@@ -646,7 +646,7 @@
       "payment_terms": "Cash, Check, Credit Card",
       "notes": "$5.799/gal will-call or $5.699/gal with automatic delivery. Full-service oil & propane.",
       "verified_source": "Direct Website (mackenziefuels.com) & GetHomeHeat",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Danville",
@@ -682,7 +682,7 @@
       "payment_terms": "Cash, Check, Credit Card (Senior Discount Available)",
       "notes": "Posted 10/27/26 cash price $5.799/gal (150-gallon minimum). Senior discount & 24hr service.",
       "verified_source": "Direct Website (shattuckoil.com) & GetHomeHeat",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Derry",
@@ -707,7 +707,7 @@
       "payment_terms": "Cash, Check, Credit Card",
       "notes": "Serves Western/Northern Rockingham County including Epping, Raymond, and Chester.",
       "verified_source": "GetHomeHeat & hebertfuel.com",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Epping",
@@ -735,7 +735,7 @@
       "payment_terms": "Cash, Check, Credit Card",
       "notes": "Veteran-owned supplier with Hampstead NH & Haverhill MA terminals ($5.85\u2013$5.949/gal).",
       "verified_source": "GetHomeHeat ($5.85) & OilAndElectric ($5.949)",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Danville",
@@ -769,7 +769,7 @@
       "payment_terms": "Cash, Check, Credit/Debit Card",
       "notes": "100-gallon minimum order; 24-hour emergency burner & HVAC service.",
       "verified_source": "OilAndElectric ($5.899) & GetHomeHeat ($5.90)",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Derry",
@@ -798,7 +798,7 @@
       "payment_terms": "Cash/Prompt Pay, Credit Card, Budget Plans",
       "notes": "Cash price of the day: Heating Oil $5.899/gal, Heating Propane $3.399/gal (>1,000 gal/yr), K-1 $7.099/gal.",
       "verified_source": "Direct Website (buxtonoil.com), OilAndElectric & GetHomeHeat",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Danville",
@@ -837,7 +837,7 @@
       "payment_terms": "Credit Card, Check (Senior Discount Available)",
       "notes": "Major Merrimack Valley & Southern NH oil and propane supplier serving all 14 local towns.",
       "verified_source": "GetHomeHeat & haffners.com",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Danville",
@@ -875,7 +875,7 @@
       "payment_terms": "Cash, Check, Credit Card",
       "notes": "Hometown Plaistow oil dealer serving Danville, Plaistow, Hampstead, Kingston, Sandown & Atkinson. Call for today's cash price.",
       "verified_source": "GetHomeHeat & leosfuelnh.com",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Danville",
@@ -907,7 +907,7 @@
       "payment_terms": "Auto-Delivery, Will-Call, Budget & Price Cap Plans",
       "notes": "Family-owned in Atkinson, NH (13 Hall Farm Rd) for 90+ years. Premier Southern NH propane & oil provider (call for daily C.O.D. oil quote; NH EIA propane benchmark $3.843/gal).",
       "verified_source": "palmergas.com & US EIA NH Propane Survey",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Danville",
@@ -945,7 +945,7 @@
       "payment_terms": "Cash, Check, Credit Card",
       "notes": "Local Haverhill oil & propane dealer delivering across border towns (Danville, Plaistow, Hampstead, Atkinson, Kingston, Salem).",
       "verified_source": "GetHomeHeat",
-      "last_checked": "2026-10-27",
+      "last_checked": "2026-10-28",
       "featured": false,
       "towns_served": [
         "Danville",
@@ -1092,6 +1092,11 @@
     },
     {
       "date": "2026-10-27",
+      "lowest": 5.6,
+      "median": 5.9
+    },
+    {
+      "date": "2026-10-28",
       "lowest": 5.5,
       "median": 5.72
     }
