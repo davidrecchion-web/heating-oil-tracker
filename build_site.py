@@ -1242,7 +1242,7 @@ def build_town_pages(data):
 
 
 def build_seo_files(data):
-    base_url = "https://nhoiltracker.com"
+    base_url = "https://nhoiltracker.github.io/heating-oil-tracker"
     urls = [f"  <url><loc>{base_url}/</loc><lastmod>{data['updated_date']}</lastmod><priority>1.0</priority></url>"]
     for t in data["towns"]:
         urls.append(
