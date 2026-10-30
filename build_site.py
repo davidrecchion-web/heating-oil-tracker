@@ -829,8 +829,8 @@ def build_index_page(data):
         </p>
       </div>
       <div style="display:flex;flex-direction:column;gap:0.5rem;min-width:230px;">
-        <a class="btn-primary" style="text-align:center;padding:0.75rem 1.2rem;font-size:0.92rem;" href="mailto:dealers@nhoiltracker.com?subject=Featured%20Dealer%20Spot%20Inquiry">⭐ Get Featured ($79/mo) &rarr;</a>
-        <a style="text-align:center;color:#cbd5e1;font-size:0.82rem;" href="mailto:dealers@nhoiltracker.com?subject=Update%20Daily%20Cash%20Oil%20Price">Submit Free Daily Price Update</a>
+        <a class="btn-primary" style="text-align:center;padding:0.75rem 1.2rem;font-size:0.92rem;" href="mailto:david.recchion@gmail.com?subject=Featured%20Dealer%20Spot%20Inquiry">⭐ Get Featured ($79/mo) &rarr;</a>
+        <a style="text-align:center;color:#cbd5e1;font-size:0.82rem;" href="mailto:david.recchion@gmail.com?subject=Update%20Daily%20Cash%20Oil%20Price">Submit Free Daily Price Update</a>
       </div>
     </section>
   </main>
