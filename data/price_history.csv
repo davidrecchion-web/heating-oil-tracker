@@ -26,25 +26,25 @@ date,dealer_id,dealer_name,hq_town,hq_state,oil_price_per_gal,cost_150_gal,propa
 2026-10-25,danville-market-benchmark,Danville Market Lowest / Median,Danville,NH,5.600,840.00,,150,,https://oilandelectric.com/heating-oil/nh/danville,OilAndElectric 30d History (Median $5.90)
 2026-10-26,danville-market-benchmark,Danville Market Lowest / Median,Danville,NH,5.600,840.00,,150,,https://oilandelectric.com/heating-oil/nh/danville,OilAndElectric 30d History (Median $5.90)
 2026-10-27,danville-market-benchmark,Danville Market Lowest / Median,Danville,NH,5.600,840.00,,150,,https://oilandelectric.com/heating-oil/nh/danville,OilAndElectric 30d History (Median $5.90)
-2026-10-29,b-and-h-oil,B & H Oil Company,Salem,NH,5.499,824.85,,150,(603) 893-8882,https://www.bandhoil.com,Direct Website (bandhoil.com) & GetHomeHeat
-2026-10-29,colonial-county-energy,Colonial Oil / County Energy Products,Chelmsford,MA,5.569,835.35,2.999,150,(978) 256-0151,https://countyenergyproducts.com,Direct Website (countyenergyproducts.com) & CheapHeatingOil
-2026-10-29,flagship-fuel,Flagship Fuel Co.,Greenland,NH,5.570,835.50,,150,(603) 988-0555,https://flagshipfuelco.com,GetHomeHeat & flagshipfuelco.com
-2026-10-29,wicked-warm,Wicked Warm Discount Fuel,Portsmouth,NH,5.570,835.50,,150,(877) 290-7379,https://wickedwarm.com,GetHomeHeat & wickedwarm.com
-2026-10-29,fuel-nrg,Fuel NRG,Windham,NH,5.599,839.85,,100,(603) 893-3600,https://fuelnrg.co/,"Direct Website (fuelnrg.co), OilAndElectric & GetHomeHeat"
-2026-10-29,southern-new-hampshire-energy,Southern New Hampshire Energy (SNH Energy),Londonderry,NH,5.690,853.50,,100,(603) 479-9282,https://www.snhenergy.com,"Direct Website (snhenergy.com), CheapHeatingOil & GetHomeHeat"
-2026-10-29,nashua-fuel,Nashua Fuel,Nashua,NH,5.699,854.85,,150,(603) 888-5070,https://www.nashuafuel.com,"Direct Website (nashuafuel.com), OilAndElectric & GetHomeHeat"
-2026-10-29,deep-discount-oil,Deep Discount Oil,Manchester,NH,5.700,855.00,,100,(603) 669-4800,https://deepdiscountoil.com,CheapHeatingOil (Manchester/Derry NH)
-2026-10-29,nibroc-oil,Nibroc Oil,Stratham,NH,5.749,862.35,,150,(603) 772-6532,https://nibrocoil.com,Direct Website (nibrocoil.com) & GetHomeHeat
-2026-10-29,discount-energy,Discount Energy,Rochester,NH,5.790,868.50,,100,(603) 335-3007,https://www.discountenergy.org,GetHomeHeat & discountenergy.org
-2026-10-29,fieldings-oil,Fielding's Oil & Propane Co.,Scarborough,ME,5.799,869.85,,150,(207) 883-3194,https://fieldingsoil.com,CheapHeatingOil & fieldingsoil.com
-2026-10-29,granite-state-oil,Granite State Oil,North Hampton,NH,5.799,869.85,,150,(603) 379-6633,https://granitestateoil.com,Direct Website (granitestateoil.com) & GetHomeHeat
-2026-10-29,mackenzie-fuels,MacKenzie Fuels,Seabrook,NH,5.799,869.85,,150,(603) 926-6003,https://mackenziefuels.com,Direct Website (mackenziefuels.com) & GetHomeHeat
-2026-10-29,hebert-fuel-co,Hebert Fuel Co.,Allenstown,NH,5.800,870.00,,150,(603) 485-4744,https://hebertfuel.com,GetHomeHeat & hebertfuel.com
-2026-10-29,broco-energy,Broco Energy,Hampstead,NH,5.850,877.50,,150,(781) 246-1130,https://www.brocoenergy.com,GetHomeHeat ($5.85) & OilAndElectric ($5.949)
-2026-10-29,absco-heating,ABSCO Heating & Home Service,Manchester,NH,5.899,884.85,,100,(603) 669-4827,https://www.abscoheating.com,OilAndElectric ($5.899) & GetHomeHeat ($5.90)
-2026-10-29,buxton-oil,Buxton Oil & Propane,Epping / Exeter,NH,5.899,884.85,3.399,150,(603) 679-5600,https://www.buxtonoil.com,"Direct Website (buxtonoil.com), OilAndElectric & GetHomeHeat"
-2026-10-29,shattuck-oil-co,Shattuck Oil Co.,Pepperell,NH/MA,5.899,884.85,,150,(978) 433-6701,https://shattuckoil.com,Direct Website (shattuckoil.com) & GetHomeHeat
-2026-10-29,haffners,Haffner's Energy,Plaistow / Lawrence,NH/MA,5.900,885.00,,150,(866) 485-4257,https://www.haffners.com,GetHomeHeat & haffners.com
-2026-10-29,leos-fuel,Leo's Fuel Service,Plaistow,NH,CALL,CALL,,125,(603) 382-8101,https://leosfuelnh.com/,GetHomeHeat & leosfuelnh.com
-2026-10-29,palmer-gas-oil,Palmer Gas & Oil,Atkinson,NH,CALL,CALL,3.843,150,(603) 898-7986,https://palmergas.com,palmergas.com & US EIA NH Propane Survey
-2026-10-29,simard-gas-oil,Simard Gas & Oil,Haverhill,MA,CALL,CALL,,150,(978) 372-0251,https://simardgas.com,GetHomeHeat
+2026-10-30,b-and-h-oil,B & H Oil Company,Salem,NH,5.499,824.85,,150,(603) 893-8882,https://www.bandhoil.com,Direct Website (bandhoil.com) & GetHomeHeat
+2026-10-30,colonial-county-energy,Colonial Oil / County Energy Products,Chelmsford,MA,5.569,835.35,2.999,150,(978) 256-0151,https://countyenergyproducts.com,Direct Website (countyenergyproducts.com) & CheapHeatingOil
+2026-10-30,discount-energy,Discount Energy,Rochester,NH,5.570,835.50,,100,(603) 335-3007,https://www.discountenergy.org,GetHomeHeat & discountenergy.org
+2026-10-30,flagship-fuel,Flagship Fuel Co.,Greenland,NH,5.570,835.50,,150,(603) 988-0555,https://flagshipfuelco.com,GetHomeHeat & flagshipfuelco.com
+2026-10-30,wicked-warm,Wicked Warm Discount Fuel,Portsmouth,NH,5.570,835.50,,150,(877) 290-7379,https://wickedwarm.com,GetHomeHeat & wickedwarm.com
+2026-10-30,fuel-nrg,Fuel NRG,Windham,NH,5.599,839.85,,100,(603) 893-3600,https://fuelnrg.co/,"Direct Website (fuelnrg.co), OilAndElectric & GetHomeHeat"
+2026-10-30,granite-state-oil,Granite State Oil,North Hampton,NH,5.670,850.50,,150,(603) 379-6633,https://granitestateoil.com,Direct Website (granitestateoil.com) & GetHomeHeat
+2026-10-30,southern-new-hampshire-energy,Southern New Hampshire Energy (SNH Energy),Londonderry,NH,5.690,853.50,,100,(603) 479-9282,https://www.snhenergy.com,"Direct Website (snhenergy.com), CheapHeatingOil & GetHomeHeat"
+2026-10-30,nashua-fuel,Nashua Fuel,Nashua,NH,5.699,854.85,,150,(603) 888-5070,https://www.nashuafuel.com,"Direct Website (nashuafuel.com), OilAndElectric & GetHomeHeat"
+2026-10-30,deep-discount-oil,Deep Discount Oil,Manchester,NH,5.700,855.00,,100,(603) 669-4800,https://deepdiscountoil.com,CheapHeatingOil (Manchester/Derry NH)
+2026-10-30,nibroc-oil,Nibroc Oil,Stratham,NH,5.749,862.35,,150,(603) 772-6532,https://nibrocoil.com,Direct Website (nibrocoil.com) & GetHomeHeat
+2026-10-30,fieldings-oil,Fielding's Oil & Propane Co.,Scarborough,ME,5.799,869.85,,150,(207) 883-3194,https://fieldingsoil.com,CheapHeatingOil & fieldingsoil.com
+2026-10-30,mackenzie-fuels,MacKenzie Fuels,Seabrook,NH,5.799,869.85,,150,(603) 926-6003,https://mackenziefuels.com,Direct Website (mackenziefuels.com) & GetHomeHeat
+2026-10-30,hebert-fuel-co,Hebert Fuel Co.,Allenstown,NH,5.800,870.00,,150,(603) 485-4744,https://hebertfuel.com,GetHomeHeat & hebertfuel.com
+2026-10-30,broco-energy,Broco Energy,Hampstead,NH,5.850,877.50,,150,(781) 246-1130,https://www.brocoenergy.com,GetHomeHeat ($5.85) & OilAndElectric ($5.949)
+2026-10-30,absco-heating,ABSCO Heating & Home Service,Manchester,NH,5.899,884.85,,100,(603) 669-4827,https://www.abscoheating.com,OilAndElectric ($5.899) & GetHomeHeat ($5.90)
+2026-10-30,buxton-oil,Buxton Oil & Propane,Epping / Exeter,NH,5.899,884.85,3.399,150,(603) 679-5600,https://www.buxtonoil.com,"Direct Website (buxtonoil.com), OilAndElectric & GetHomeHeat"
+2026-10-30,shattuck-oil-co,Shattuck Oil Co.,Pepperell,NH/MA,5.899,884.85,,150,(978) 433-6701,https://shattuckoil.com,Direct Website (shattuckoil.com) & GetHomeHeat
+2026-10-30,haffners,Haffner's Energy,Plaistow / Lawrence,NH/MA,5.900,885.00,,150,(866) 485-4257,https://www.haffners.com,GetHomeHeat & haffners.com
+2026-10-30,leos-fuel,Leo's Fuel Service,Plaistow,NH,CALL,CALL,,125,(603) 382-8101,https://leosfuelnh.com/,GetHomeHeat & leosfuelnh.com
+2026-10-30,palmer-gas-oil,Palmer Gas & Oil,Atkinson,NH,CALL,CALL,3.843,150,(603) 898-7986,https://palmergas.com,palmergas.com & US EIA NH Propane Survey
+2026-10-30,simard-gas-oil,Simard Gas & Oil,Haverhill,MA,CALL,CALL,,150,(978) 372-0251,https://simardgas.com,GetHomeHeat
