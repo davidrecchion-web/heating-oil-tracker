@@ -915,6 +915,18 @@ def build_master_dataset():
             "verified_source": d["verified_source"],
         })
 
+    # Upsert into existing history keyed by (date, dealer_id): keep earlier
+    # dates, replace same-date rows on a re-run, append new ones.
+    merged = {}
+    if os.path.exists(csv_path):
+        with open(csv_path, newline="", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                if r.get("date") and r.get("dealer_id"):
+                    merged[(r["date"], r["dealer_id"])] = {k: r.get(k, "") for k in fieldnames}
+    for r in rows_to_write:
+        merged[(r["date"], r["dealer_id"])] = r
+    rows_to_write = [merged[k] for k in sorted(merged)]
+
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
